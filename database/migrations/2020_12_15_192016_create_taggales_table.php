@@ -16,8 +16,7 @@ class CreateTaggalesTable extends Migration
         Schema::create('taggales', function (Blueprint $table) {
             $table->id();
             $table->integer('tag_id');
-            $table->integer('taggales_id');
-            $table->text('taggales_type');
+            $table->morphs('taggable');
             $table->softDeletes();
             $table->timestamps();
         });
