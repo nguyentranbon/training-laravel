@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comment;
 use App\Models\Post;
-use Illuminate\Database\Eloquent\Model;
-
-class PostController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,7 @@ class PostController extends Controller
     public function index()
     {
         $post = Post::find(1);
-        dd($post->tags);
+        dd($post);
     }
 
     /**
