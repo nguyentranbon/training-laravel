@@ -17,7 +17,8 @@ class PostSeeder extends Seeder
         //
         for ($i = 0; $i < 10; $i++) {
             DB::table('posts')->insert([
-                'title' => "user{$i}",
+                'user_id' => $i,
+                'title' => "title{$i}",
                 'content' => "content{$i}",
                 'created_at' => "2019-12-23",
                 'updated_at' => "2019-12-23",

@@ -3,22 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Image;
+use App\Models\Post;
+use Illuminate\Database\Eloquent\Model;
 
-class ImageController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response     
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $image = Image::find(1);
-        dd($image->imageable); exit;
+        $post = Post::find(1);
+        // dd($post->image());exit;
     }
 
-    
     /**
      * Show the form for creating a new resource.
      *
