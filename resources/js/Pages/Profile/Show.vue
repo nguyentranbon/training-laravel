@@ -1,13 +1,11 @@
 <template>
     <app-layout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Profile
-            </h2>
-        </template>
+        <div>
+            <h3 class="text-gray-700 text-3xl font-medium">Profile</h3>
+        </div>
 
         <div>
-            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-0">
                 <div v-if="$page.jetstream.canUpdateProfileInformation">
                     <update-profile-information-form :user="$page.user" />
 
