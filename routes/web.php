@@ -30,3 +30,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/category', function () {
     return Inertia\Inertia::render('Category');
 })->name('category');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/post', function () {
+    return Inertia\Inertia::render('Post');
+})->name('post');

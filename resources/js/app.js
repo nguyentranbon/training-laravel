@@ -13,6 +13,14 @@ Vue.use(InertiaApp);
 Vue.use(InertiaForm);
 Vue.use(PortalVue);
 
+const Swat = require('sweetalert2').default;
+window.Toast = Swat.mixin({
+    toast: true,
+    position: 'top-right',
+    timer:3500,
+    timerProgressBar: true
+});
+
 const app = document.getElementById('app');
 
 new Vue({

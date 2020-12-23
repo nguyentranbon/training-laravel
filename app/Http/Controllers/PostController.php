@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
-use Illuminate\Database\Eloquent\Model;
-
 class PostController extends Controller
 {
     /**
@@ -15,18 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::find(1);
-        dd($post->tags);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return Post::all();
     }
 
     /**
@@ -37,7 +24,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'title' => 'required',
+            'content' => 'required'
+        ]);
+        
+        $post = new Post();
+        $post->title = $request->title;
+        $post->content = $request->content;
+
+        $post->save();
+        return response("Successfully Create a Post",201);
     }
 
     /**
@@ -47,17 +44,6 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
     {
         //
     }
